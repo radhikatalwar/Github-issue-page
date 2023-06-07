@@ -12,7 +12,13 @@ export const styles = {
       alignItems: "flex-start",
     },
   },
-  rightContainer: { display: "flex", alignItems: "center", gap: "20px" },
+  rightContainer: {
+    display: "flex",
+    alignItems: "center",
+    [theme.breakpoints.down(500)]: {
+      marginLeft: "20px",
+    },
+  },
   errorContainer: {
     border: `1px solid ${COLORS.gray}`,
     padding: "15px",
@@ -22,8 +28,6 @@ export const styles = {
     [theme.breakpoints.down(500)]: {
       flexWrap: "wrap",
       gap: "10px",
-      minWidth: "20%",
-      width: "100%",
     },
   },
   messageIcon: {
@@ -43,7 +47,7 @@ export const styles = {
     },
   },
   labelContainer: { display: "flex", flexWrap: "wrap" },
-  title: { font: "normal normal 700 15px/24px Sans-serif" },
+  title: { font: "normal normal 700 15px/17px Sans-serif" },
   label: {
     borderRadius: "10px",
     padding: "5px",
@@ -51,6 +55,9 @@ export const styles = {
     "& p": {
       font: "normal normal 700 12px/14px Sans-serif",
       letterSpacing: "-0.19px",
+    },
+    [theme.breakpoints.down(500)]: {
+      margin: "0 5px 0 0",
     },
   },
   icon: {
@@ -65,8 +72,6 @@ export const styles = {
     width: "70%",
     [theme.breakpoints.down(500)]: {
       alignItems: "flex-start",
-      flexWrap: "wrap",
-      gap: "10px",
       width: "100%",
     },
   },
@@ -90,6 +95,9 @@ export const styles = {
   subTitle: {
     font: "normal normal 700 13px/15px Sans-serif",
     color: COLORS.dimgray,
+    [theme.breakpoints.down(500)]: {
+      marginTop: "5px",
+    },
   },
   count: {
     padding: "5px",
