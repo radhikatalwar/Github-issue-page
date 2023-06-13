@@ -10,14 +10,14 @@ export const getAllErrors =
     if (!navigator.onLine) {
       return;
     }
+    const { page, limit, errors } = getState().errorcontent;
 
     dispatch(setLoading(true));
-
     getApiCall(
-      "https://api.github.com/repos/facebook/react/issues",
+      `https://api.github.com/repos/facebook/react/issues?page=${page}&per_page=${limit}`,
       "",
       (response: AxiosResponse<any>) => {
-        dispatch(allErrors(response.data));
+        dispatch(allErrors([...errors, ...response.data]));
         dispatch(setLoading(false));
       },
       () => {

@@ -17,7 +17,7 @@ const Home = () => {
         onScroll={handleScroll}
       >
         {errors.map((error) => {
-          return <ErrorList error={error} />;
+          return <ErrorList error={error} key={error.title} />;
         })}
       </Box>
       <Footer />

@@ -4,6 +4,8 @@ import { ErrorsMain, Errors } from "../services/types";
 
 export const errorsInitialValue: ErrorsMain = {
   errors: [],
+  page: 1,
+  limit: 10,
 };
 
 const ErrorsModuleSlice = createSlice({
@@ -13,9 +15,12 @@ const ErrorsModuleSlice = createSlice({
     allErrors: (state: ErrorsMain, action: PayloadAction<Errors[]>) => {
       state.errors = action.payload;
     },
+    setPage: (state: ErrorsMain, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
   },
 });
 
-export const { allErrors } = ErrorsModuleSlice.actions;
+export const { allErrors, setPage } = ErrorsModuleSlice.actions;
 
 export default ErrorsModuleSlice.reducer;

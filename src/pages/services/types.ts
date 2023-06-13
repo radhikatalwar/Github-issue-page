@@ -1,5 +1,7 @@
 export type ErrorsMain = {
   errors: Errors[];
+  page: number;
+  limit: number;
 };
 
 export type Errors = {

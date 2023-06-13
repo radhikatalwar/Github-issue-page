@@ -16,7 +16,7 @@ const Footer = () => {
       <Divider sx={styles.divider} />
       <Box className="redirect-container" sx={styles.redirectContainer}>
         {redirectPages.map((page) => {
-          return <Typography>{page}</Typography>;
+          return <Typography key={page}>{page}</Typography>;
         })}
       </Box>
     </>

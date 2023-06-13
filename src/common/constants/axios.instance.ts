@@ -6,5 +6,6 @@ export const $axios = axios.create({
   headers: {
     "Content-Type": "application/json",
     accept: "application/json",
+    Authorization: "token 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",
   },
 });
